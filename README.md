@@ -1,38 +1,96 @@
-Role Name
-=========
+# [pip](#pip)
 
-A brief description of the role goes here.
+Pip (Python package manager) for Linux.
 
-Requirements
-------------
+|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![github](https://github.com/buluma/ansible-role-pip/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-pip/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-pip/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-pip)|[![quality](https://img.shields.io/ansible/quality/54591)](https://galaxy.ansible.com/buluma/pip)|[![downloads](https://img.shields.io/ansible/role/d/54591)](https://galaxy.ansible.com/buluma/pip)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-pip.svg)](https://github.com/buluma/ansible-role-pip/releases/)|
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## [Example Playbook](#example-playbook)
 
-Role Variables
---------------
+This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+```yaml
+---
+- name: Converge
+  hosts: all
+  become: true
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+  vars:
+    pip_install_packages:
+      # Test installing a specific version of a package.
+      - name: ipaddress
+        version: "1.0.18"
+      # Test installing a package by name.
+      - colorama
 
-Dependencies
-------------
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+    - name: Set package name for older OSes.
+      set_fact:
+        pip_package: python-pip
+      when: >
+        (ansible_os_family == 'RedHat') and (ansible_distribution_major_version | int < 8)
+        or (ansible_distribution == 'Debian') and (ansible_distribution_major_version | int < 10)
+        or (ansible_distribution == 'Ubuntu') and (ansible_distribution_major_version | int < 18)
+  roles:
+    - role: buluma.pip
+```
 
-Example Playbook
-----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## [Role Variables](#role-variables)
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+The default values for the variables are set in `defaults/main.yml`:
+```yaml
+---
+# defaults file for ansible-role-pip
+# For Python 3, use python3-pip.
+pip_package: python3-pip
+pip_executable: "{{ 'pip3' if pip_package.startswith('python3') else 'pip' }}"
 
-License
--------
+pip_install_packages: []
+```
 
-BSD
+## [Requirements](#requirements)
 
-Author Information
-------------------
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-pip/blob/main/requirements.txt).
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+
+## [Context](#context)
+
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.co.ke/) for further information.
+
+Here is an overview of related roles:
+
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-pip/png/requirements.png "Dependencies")
+
+## [Compatibility](#compatibility)
+
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+
+|container|tags|
+|---------|----|
+|el|all|
+|fedora|all|
+|debian|all|
+|ubuntu|all|
+
+The minimum version of Ansible required is 2.4, tests have been done to:
+
+- The previous version.
+- The current version.
+- The development version.
+
+
+
+If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-pip/issues)
+
+## [License](#license)
+
+Apache-2.0
+
+## [Author Information](#author-information)
+
+[buluma](https://buluma.github.io/)
