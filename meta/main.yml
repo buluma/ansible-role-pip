@@ -11,13 +11,13 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - all
+        - latest
     - name: Fedora
       versions:
         - all
     - name: Debian
       versions:
-        - all
+        - latest
     - name: Ubuntu
       versions:
         - all
