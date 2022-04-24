@@ -5,7 +5,7 @@ galaxy_info:
   role_name: pip
   description: Install Pip (Python package manager) for Linux.
   license: Apache-2.0
-  company: none
+  company: ShadowNet
   min_ansible_version: "2.10"
 
   platforms:
@@ -28,3 +28,5 @@ galaxy_info:
     - python
     - pip
     - tools
+
+dependencies: []
