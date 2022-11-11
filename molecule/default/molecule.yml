@@ -29,6 +29,3 @@ provisioner:
   config_options:
     defaults:
       interpreter_python: auto_legacy_silent
-      callback_whitelist: profile_tasks
-    ssh_connection:
-      pipelining: true
