@@ -1,11 +1,11 @@
 ---
 image: "buluma/github-action-molecule:4.0.9"
 
-services:
-  - docker:dind
+# services:
+  # - docker:dind
 
 variables:
-  DOCKER_HOST: "tcp://docker:2375"
+  # DOCKER_HOST: "tcp://docker:2375"
   PY_COLORS: 1
 
 molecule:
@@ -13,7 +13,7 @@ molecule:
   allow_failure: true
   script:
     - image=${image} tag=${tag} molecule test
-  retry: 1
+  retry: 0
   parallel:
     matrix:
       - image: "enterpriselinux"
