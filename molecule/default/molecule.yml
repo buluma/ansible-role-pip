@@ -15,7 +15,7 @@ driver:
   name: docker
 platforms:
   - name: "pip-${image:-docker-centos7-ansible}-${tag:-latest}${TOX_ENVNAME}"
-    image: "${namespace:-buluma}/${image:-docker-centos7-ansible}:${tag:-latest}"
+    image: "${namespace:-robertdebock}/${image:-docker-centos7-ansible}:${tag:-latest}"
     command: /sbin/init
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
