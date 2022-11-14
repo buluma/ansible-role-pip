@@ -12,7 +12,7 @@ molecule:
   retry: 0
   parallel:
     matrix:
-      - image: "docker-cento7-ansible"
+      - image: "docker-centos7-ansible"
         tag: "latest"
       - image: "fedora-systemd"
         tag: "34"
@@ -43,7 +43,7 @@ testing:
   retry: 1
   parallel:
     matrix:
-      - image: "docker-cento7-ansible"
+      - image: "docker-centos7-ansible"
         tag: "latest"
       - image: "fedora-systemd"
         tag: "34"
