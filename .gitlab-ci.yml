@@ -12,26 +12,20 @@ molecule:
   retry: 0
   parallel:
     matrix:
-      - image: "centos-systemd"
+      - image: "enterpriselinux"
         tag: "latest"
-      - image: "docker-fedora36-ansible"
+      - image: "fedora"
         tag: "latest"
-      - image: "docker-fedora35-ansible"
-        tag: "latest"
+      - image: "fedora"
+        tag: "36"
+      - image: "fedora-systemd"
+        tag: "36"
       - image: "docker-fedora36-ansible"
         tag: "latest"
       - image: "debian"
         tag: "latest"
-      - image: "debian"
-        tag: "bookworm"
       - image: "ubuntu"
         tag: "latest"
-      - image: "docker-ubuntu-systemd"
-        tag: "bionic"
-      - image: "ubuntu"
-        tag: "focal"
-      - image: "ubuntu"
-        tag: "jammy"
 
 testing:
   stage: test
@@ -43,26 +37,20 @@ testing:
   retry: 1
   parallel:
     matrix:
-      - image: "docker-centos7-ansible"
+      - image: "enterpriselinux"
         tag: "latest"
+      - image: "fedora"
+        tag: "latest"
+      - image: "fedora"
+        tag: "36"
       - image: "fedora-systemd"
-        tag: "34"
-      - image: "fedora-systemd"
-        tag: "35"
-      - image: "fedora-systemd"
+        tag: "36"
+      - image: "docker-fedora36-ansible"
         tag: "latest"
-      - image: "debian-systemd"
+      - image: "debian"
         tag: "latest"
-      - image: "debian-systemd"
-        tag: "bookworm"
-      - image: "docker-ubuntu-systemd"
+      - image: "ubuntu"
         tag: "latest"
-      - image: "docker-ubuntu-systemd"
-        tag: "bionic"
-      - image: "docker-ubuntu-systemd"
-        tag: "focal"
-      - image: "docker-ubuntu-systemd"
-        tag: "jammy"
 
 galaxy:
   stage: deploy
