@@ -29,6 +29,8 @@ molecule:
       #   tag: "bookworm"
       - image: "ubuntu"
         tag: "latest"
+      - image: "debian"
+        tag: "buster"
       - image: "gitlab-runner"
         tag: "ubuntu"
 
