@@ -10,6 +10,7 @@ exclude_paths:
   - ./molecule/default/collections.yml
   - ./.tox
   - ./.cache
+  - .github/workflows/galaxy.yml
 
 skip_list:
   - fqcn-builtins
