@@ -30,7 +30,11 @@ molecule:
       - image: "ubuntu"
         tag: "latest"
       - image: "debian"
-        tag: "buster"
+        tag: "bullseye"
+      - image: "debian"
+        tag: "bookworm"
+      - image: "debian"
+        tag: "stretch"
       - image: "gitlab-runner"
         tag: "ubuntu"
 
