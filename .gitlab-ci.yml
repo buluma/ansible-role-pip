@@ -8,6 +8,7 @@ molecule:
   stage: build
   allow_failure: true
   script:
+    - whoami
     - image=${image} tag=${tag} molecule test
   retry: 0
   parallel:
@@ -28,6 +29,8 @@ molecule:
         tag: "bookworm"
       - image: "ubuntu"
         tag: "latest"
+      - image: "gitlab-runner"
+        tag: "ubuntu"
 
 testing:
   stage: test
