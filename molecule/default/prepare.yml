@@ -3,7 +3,7 @@
   hosts: all
   become: true
   become_method: su
-  gather_facts: true
+  gather_facts: false
   vars:
     ansible_python_interpreter: /usr/bin/python3
 
