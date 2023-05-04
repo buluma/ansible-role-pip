@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-pip/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-pip/compare/2.0.7...HEAD)
+
+**Merged pull requests:**
+
+- Bump buluma/gitlab-mirror-ci-action from 1.0.6 to 1.0.7 [\#14](https://github.com/buluma/ansible-role-pip/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/molecule-action from 5.0.1 to 5.0.4 [\#13](https://github.com/buluma/ansible-role-pip/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump act10ns/slack from 1 to 2 [\#12](https://github.com/buluma/ansible-role-pip/pull/12) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.0.7](https://github.com/buluma/ansible-role-pip/tree/2.0.7) (2022-09-17)
 
 [Full Changelog](https://github.com/buluma/ansible-role-pip/compare/2.0.6...2.0.7)
