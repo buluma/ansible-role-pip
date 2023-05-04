@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-pip/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-pip/compare/2.0.7...HEAD)
+
+**Merged pull requests:**
+
+- Bump buluma/gitlab-mirror-ci-action from 1.0.6 to 1.0.7 [\#14](https://github.com/buluma/ansible-role-pip/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/molecule-action from 5.0.1 to 5.0.4 [\#13](https://github.com/buluma/ansible-role-pip/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump act10ns/slack from 1 to 2 [\#12](https://github.com/buluma/ansible-role-pip/pull/12) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.0.7](https://github.com/buluma/ansible-role-pip/tree/2.0.7) (2022-09-17)
 
 [Full Changelog](https://github.com/buluma/ansible-role-pip/compare/2.0.6...2.0.7)
@@ -15,7 +25,6 @@
 **Merged pull requests:**
 
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.4 to 1.0.5 [\#7](https://github.com/buluma/ansible-role-pip/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump actions/checkout from 2 to 3 [\#1](https://github.com/buluma/ansible-role-pip/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [2.0.5](https://github.com/buluma/ansible-role-pip/tree/2.0.5) (2022-03-28)
 
@@ -25,6 +34,7 @@
 
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.3 to 1.0.4 [\#6](https://github.com/buluma/ansible-role-pip/pull/6) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Merge pull request \#3 from buluma/master [\#4](https://github.com/buluma/ansible-role-pip/pull/4) ([buluma](https://github.com/buluma))
+- Bump actions/checkout from 2 to 3 [\#1](https://github.com/buluma/ansible-role-pip/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [2.0.4](https://github.com/buluma/ansible-role-pip/tree/2.0.4) (2022-03-22)
 
