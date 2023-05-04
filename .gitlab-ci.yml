@@ -17,8 +17,8 @@ molecule:
       #   tag: "latest"
       - image: "fedora"
         tag: "latest"
-      # - image: "ubuntu"
-      #   tag: "latest"
+      - image: "ubuntu"
+        tag: "latest"
       # - image: "debian"
       #   tag: "bullseye"
       # - image: "debian"
@@ -27,6 +27,8 @@ molecule:
       #   tag: "stretch"
       - image: "gitlab-runner"
         tag: "ubuntu"
+      - image: "gitlab-runner"
+        tag: "fedora"
 
 testing:
   stage: test
