@@ -1,89 +1,38 @@
 ---
-image: "buluma/github-action-molecule:4.0.9"
+image: "buluma/github-action-molecule:5.0.7"
 
 variables:
   PY_COLORS: 1
 
 molecule:
-  stage: build
-  allow_failure: true
   script:
-    - whoami
-    - image=${image} tag=${tag} molecule test
-  retry: 0
-  parallel:
-    matrix:
-      # - image: "enterpriselinux"
-      #   tag: "latest"
-      - image: "fedora"
-        tag: "latest"
-      - image: "ubuntu"
-        tag: "latest"
-      # - image: "debian"
-      #   tag: "bullseye"
-      # - image: "debian"
-      #   tag: "bookworm"
-      # - image: "debian"
-      #   tag: "stretch"
-      - image: "gitlab-runner"
-        tag: "ubuntu"
-      - image: "gitlab-runner"
-        tag: "fedora"
-
-testing:
-  stage: test
-  needs: []
-  script:
-    - image=${image} tag=${tag} molecule test
+    - if [ -f tox.ini ] ; then tox ; fi
+    - if [ ! -f tox.ini ] ; then molecule test ; fi
   rules:
-    - if: $CI_COMMIT_REF_NAME == "testing"
-  retry: 1
+    - if: $CI_COMMIT_REF_NAME == "master"
   parallel:
     matrix:
       - image: "enterpriselinux"
-        tag: "latest"
-      - image: "fedora"
-        tag: "latest"
-      - image: "fedora"
-        tag: "36"
+        tag: "8"
       - image: "fedora-systemd"
         tag: "36"
-      - image: "docker-fedora36-ansible"
+      - image: "fedora-systemd"
+        tag: "37"
+      - image: "fedora-systemd"
         tag: "latest"
-      - image: "debian"
-        tag: "buster"
-      - image: "debian"
-        tag: "bookworm"
-      - image: "ubuntu"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "latest"
+      - image: "docker-ubuntu-systemd"
+        tag: "focal"
+      - image: "docker-ubuntu-systemd"
+        tag: "bionic"
+      - image: "kali"
         tag: "latest"
 
 galaxy:
-  stage: deploy
-  needs: []
   script:
-    - ansible-galaxy role info buluma.pip
-
-role_testing:
-  stage: test
-  needs: []
-  script:
-    - image=${image} tag=${tag} ansible-galaxy install buluma.pip
-  retry: 1
-  parallel:
-    matrix:
-      - image: "enterpriselinux"
-        tag: "latest"
-      - image: "fedora"
-        tag: "latest"
-      - image: "fedora"
-        tag: "36"
-      - image: "fedora-systemd"
-        tag: "36"
-      - image: "docker-fedora36-ansible"
-        tag: "latest"
-      - image: "debian"
-        tag: "buster"
-      - image: "debian"
-        tag: "bookworm"
-      - image: "ubuntu"
-        tag: "latest"
+    - ansible-galaxy role import --api-key ${GALAXY_API_KEY} buluma ${CI_PROJECT_NAME}
+  rules:
+    - if: $CI_COMMIT_TAG != null

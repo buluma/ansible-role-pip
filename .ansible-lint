@@ -3,14 +3,17 @@
 # Ansible managed
 #
 exclude_paths:
-  - ./meta/exception.yml
   - ./meta/preferences.yml
   - ./molecule/default/prepare.yml
   - ./molecule/default/converge.yml
   - ./molecule/default/collections.yml
   - ./.tox
   - ./.cache
-  - .github/workflows/galaxy.yml
+  - ./.github
+  - ./requirements.yml
 
 skip_list:
-  - fqcn-builtins
+  - yaml[truthy]
+
+enable_list:
+  - name[prefix]
