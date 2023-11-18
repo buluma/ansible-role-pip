@@ -1,4 +1,4 @@
-# [pip](#pip)
+# [Ansible role pip](#pip)
 
 Install Pip (Python package manager) for Linux.
 
