@@ -6,6 +6,7 @@
 
 **Closed issues:**
 
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#25](https://github.com/buluma/ansible-role-pip/issues/25)
 - Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#20](https://github.com/buluma/ansible-role-pip/issues/20)
 - Update action [\#19](https://github.com/buluma/ansible-role-pip/issues/19)
 
