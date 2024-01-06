@@ -43,8 +43,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "enterpriselinux"
-            tag: "8"
           - image: "fedora-systemd"
             tag: "38"
           - image: "fedora-systemd"
@@ -61,8 +59,6 @@ jobs:
             tag: "focal"
           - image: "docker-ubuntu-systemd"
             tag: "bionic"
-          - image: "kali"
-            tag: "latest"
     steps:
       - name: Checkout Role
         uses: actions/checkout@v4

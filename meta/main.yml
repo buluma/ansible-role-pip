@@ -1,17 +1,13 @@
 ---
 galaxy_info:
-  author: Michael Buluma
-  namespace: buluma
+  author: buluma
   role_name: pip
   description: Install Pip (Python package manager) for Linux.
   license: Apache-2.0
   company: ShadowNet
-  min_ansible_version: "2.12"
+  min_ansible_version: "2.10"
 
   platforms:
-    - name: EL
-      versions:
-        - "8"
     - name: Fedora
       versions:
         - all
@@ -19,9 +15,6 @@ galaxy_info:
       versions:
         - all
     - name: Ubuntu
-      versions:
-        - all
-    - name: Kali
       versions:
         - all
   galaxy_tags:
