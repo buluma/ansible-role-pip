@@ -4,9 +4,13 @@
 - name: debian12 | Get python3 version installed
   ansible.builtin.command: python3 --version
   register: py3ver
+  tags:
+    - molecule-notest
 
 - name: debian12 | Remove EXTERNALLY-MANAGED
   ansible.builtin.file:
     path: /usr/lib/python3.11/EXTERNALLY-MANAGED
     state: absent
   when: py3ver is defined and py3ver.stdout.find("3.11") != -1
+  tags:
+    - molecule-notest
