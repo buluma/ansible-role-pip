@@ -47,7 +47,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 - name: Prepare
   hosts: all
   become: true
-  become_method: su
+  # become_method: su
   gather_facts: false
   vars:
     ansible_python_interpreter: /usr/bin/python3
