@@ -9,6 +9,11 @@
 - Update action [\#24](https://github.com/buluma/ansible-role-pip/issues/24)
 - rebuild action [\#23](https://github.com/buluma/ansible-role-pip/issues/23)
 
+**Merged pull requests:**
+
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.5 to 1.0.8 [\#27](https://github.com/buluma/ansible-role-pip/pull/27) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 3 to 4 [\#26](https://github.com/buluma/ansible-role-pip/pull/26) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.1.0](https://github.com/buluma/ansible-role-pip/tree/2.1.0) (2024-01-06)
 
 [Full Changelog](https://github.com/buluma/ansible-role-pip/compare/2.0.7...2.1.0)
