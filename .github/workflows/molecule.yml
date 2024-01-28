@@ -52,8 +52,6 @@ jobs:
           - image: "fedora-systemd"
             tag: "38"
           - image: "debian-systemd"
-            tag: "latest"
-          - image: "debian-systemd"
             tag: "bullseye"
           - image: "docker-ubuntu-systemd"
             tag: "latest"
