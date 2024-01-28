@@ -10,7 +10,8 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-        - all
+        - "39"
+        - "38"
     - name: Debian
       versions:
         - all

@@ -100,7 +100,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
+|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|39, 38|
 |[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
 |[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
 
