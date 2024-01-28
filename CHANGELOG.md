@@ -43,16 +43,14 @@
 
 - Add to tracker [\#5](https://github.com/buluma/ansible-role-pip/issues/5)
 
-**Merged pull requests:**
-
-- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.4 to 1.0.5 [\#7](https://github.com/buluma/ansible-role-pip/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
-
 ## [2.0.5](https://github.com/buluma/ansible-role-pip/tree/2.0.5) (2022-03-28)
 
 [Full Changelog](https://github.com/buluma/ansible-role-pip/compare/2.0.4...2.0.5)
 
 **Merged pull requests:**
 
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.4 to 1.0.5 [\#7](https://github.com/buluma/ansible-role-pip/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.3 to 1.0.4 [\#6](https://github.com/buluma/ansible-role-pip/pull/6) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Merge pull request \#3 from buluma/master [\#4](https://github.com/buluma/ansible-role-pip/pull/4) ([buluma](https://github.com/buluma))
 - Bump actions/checkout from 2 to 3 [\#1](https://github.com/buluma/ansible-role-pip/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
 
@@ -66,7 +64,6 @@
 
 **Merged pull requests:**
 
-- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.3 to 1.0.4 [\#6](https://github.com/buluma/ansible-role-pip/pull/6) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Update README.md [\#3](https://github.com/buluma/ansible-role-pip/pull/3) ([buluma](https://github.com/buluma))
 - Bump actions/setup-python from 2 to 3 [\#2](https://github.com/buluma/ansible-role-pip/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 
