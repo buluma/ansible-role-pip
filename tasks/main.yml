@@ -12,6 +12,8 @@
     state: present
 
 - name: Ensure pip_install_packages are installed.
+  vars:
+    ansible_python_interpreter: "python3"
   ansible.builtin.pip:
     name: "{{ item.name | default(item) }}"
     version: "{{ item.version | default(omit) }}"
