@@ -4,6 +4,7 @@
 - name: debian12 | Get python3 version installed
   ansible.builtin.command: python3 --version
   register: py3ver
+  changed_when: false
   tags:
     - molecule-notest
 

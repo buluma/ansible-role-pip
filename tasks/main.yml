@@ -1,10 +1,9 @@
-# tasks file for ansible-role-pip
 ---
-- name: Remove externally managed from Debian 11/12
+- name: Remove externally managed from Debian 12
   ansible.builtin.import_tasks: debian12.yml
   when:
     - ansible_distribution == "Debian"
-    - ansible_distribution_major_version|int >= 11
+    - ansible_distribution_major_version|int >= 12
 
 - name: Ensure Pip is installed.
   ansible.builtin.package:
@@ -12,8 +11,6 @@
     state: present
 
 - name: Ensure pip_install_packages are installed.
-  vars:
-    ansible_python_interpreter: "python3"
   ansible.builtin.pip:
     name: "{{ item.name | default(item) }}"
     version: "{{ item.version | default(omit) }}"
