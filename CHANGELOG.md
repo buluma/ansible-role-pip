@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-pip/tree/HEAD)
+## [2.2.0](https://github.com/buluma/ansible-role-pip/tree/2.2.0) (2024-01-28)
 
-[Full Changelog](https://github.com/buluma/ansible-role-pip/compare/2.1.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-pip/compare/2.1.0...2.2.0)
 
 **Closed issues:**
 
