@@ -22,6 +22,7 @@ galaxy_info:
         - bionic
         - jammy
         - noble
+        - lunar
   galaxy_tags:
     - system
     - server
