@@ -12,6 +12,7 @@ galaxy_info:
       versions:
         - "39"
         - "38"
+        - "40"
     - name: Debian
       versions:
         - all
@@ -20,6 +21,7 @@ galaxy_info:
         - focal
         - bionic
         - jammy
+        - noble
   galaxy_tags:
     - system
     - server

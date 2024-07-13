@@ -100,9 +100,9 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[Fedora](https://hub.docker.com/r/buluma/fedora)|39, 38|
+|[Fedora](https://hub.docker.com/r/buluma/fedora)|39, 38, 40|
 |[Debian](https://hub.docker.com/r/buluma/debian)|all|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|focal, bionic, jammy|
+|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|focal, bionic, jammy, noble|
 
 The minimum version of Ansible required is 2.10, tests have been done to:
 
