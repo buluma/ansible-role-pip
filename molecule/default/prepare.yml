@@ -9,3 +9,6 @@
 
   roles:
     - role: buluma.bootstrap
+    - role: buluma.setuptools
+    - role: buluma.openssl
+    - role: buluma.ca_certificates
