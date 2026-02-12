@@ -5,4 +5,4 @@
 repository:
   description: Install Pip (Python package manager) for Linux.
   homepage: https://buluma.github.io/
-  topics: system, server, packaging, python, pip, tools, ansible, molecule, tox, playbook
+  topics: system, server, packaging, python, pip, tools, ansible, molecule, playbook
