@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: buluma
   role_name: pip
@@ -6,9 +7,9 @@ galaxy_info:
   company: ShadowNet
   min_ansible_version: '2.10'
   platforms:
-  - name: Fedora
-    versions:
-    - all
+    - name: Fedora
+      versions:
+        - all
   - name: Debian
     versions:
     - all
@@ -16,7 +17,7 @@ galaxy_info:
     versions:
     - all
   galaxy_tags:
-  - system
+    - system
   - server
   - packaging
   - python
