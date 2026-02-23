@@ -12,51 +12,51 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - name: Converge
-    hosts: all
-    become: true
+- name: Converge
+  hosts: all
+  become: true
 
-    vars:
-      pip_install_packages:
+  vars:
+    pip_install_packages:
       # Test installing a specific version of a package.
-        - name: ipaddress
-          version: "1.0.18"
+    - name: ipaddress
+      version: "1.0.18"
       # Test installing a package by name.
-        - colorama
+    - colorama
 
-    pre_tasks:
-      - name: update apt cache.
-        apt: update_cache=true cache_valid_time=600
-        when: ansible_os_family == 'Debian'
+  pre_tasks:
+  - name: update apt cache.
+    apt: update_cache=true cache_valid_time=600
+    when: ansible_os_family == 'Debian'
 
-      - name: set package name for older OSes.
-        set_fact:
-          pip_package: python-pip
-        when: >
-          (ansible_os_family == 'RedHat') and (ansible_distribution_major_version
-          | int < 8)
-          or (ansible_distribution == 'Debian') and (ansible_distribution_major_version
-          | int < 10)
-          or (ansible_distribution == 'Ubuntu') and (ansible_distribution_major_version
-          | int < 18)
-    roles:
-      - role: buluma.pip
+  - name: set package name for older OSes.
+    set_fact:
+      pip_package: python-pip
+    when: >
+      (ansible_os_family == 'RedHat') and (ansible_distribution_major_version
+      | int < 8)
+      or (ansible_distribution == 'Debian') and (ansible_distribution_major_version
+      | int < 10)
+      or (ansible_distribution == 'Ubuntu') and (ansible_distribution_major_version
+      | int < 18)
+  roles:
+  - role: buluma.pip
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-pip/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - name: Prepare
-    hosts: all
-    become: true
+- name: Prepare
+  hosts: all
+  become: true
   # become_method: su
-    gather_facts: false
-    vars:
-      ansible_python_interpreter: /usr/bin/python3
+  gather_facts: false
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
 
-    roles:
-      - role: buluma.bootstrap
+  roles:
+  - role: buluma.bootstrap
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
