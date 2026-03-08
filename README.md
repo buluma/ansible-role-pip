@@ -2,9 +2,9 @@
 
 Install Pip (Python package manager) for Linux.
 
-|GitHub|GitLab|Downloads|Version|
-|------|------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-pip/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-pip/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-pip/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-pip)|[![downloads](https://img.shields.io/ansible/role/d/buluma/pip)](https://galaxy.ansible.com/buluma/pip)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-pip.svg)](https://github.com/buluma/ansible-role-pip/releases/)|
+|GitHub|Issues|Pull Requests|Version|Downloads|
+|------|------|-------------|-------|---------|
+|[![github](https://github.com/buluma/ansible-role-pip/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-pip/actions/workflows/molecule.yml)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-pip.svg)](https://github.com/buluma/ansible-role-pip/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-pip.svg)](https://github.com/buluma/ansible-role-pip/pulls/)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-pip.svg)](https://github.com/buluma/ansible-role-pip/releases/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/pip)](https://galaxy.ansible.com/ui/standalone/roles/buluma/pip/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -19,28 +19,28 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   vars:
     pip_install_packages:
       # Test installing a specific version of a package.
-    - name: ipaddress
-      version: "1.0.18"
-      # Test installing a package by name.
-    - colorama
+      - name: ipaddress
+        version: "1.0.18"
+        # Test installing a package by name.
+      - colorama
 
   pre_tasks:
-  - name: update apt cache.
-    apt: update_cache=true cache_valid_time=600
-    when: ansible_os_family == 'Debian'
+    - name: update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
 
-  - name: set package name for older OSes.
-    set_fact:
-      pip_package: python-pip
-    when: >
-      (ansible_os_family == 'RedHat') and (ansible_distribution_major_version
-      | int < 8)
-      or (ansible_distribution == 'Debian') and (ansible_distribution_major_version
-      | int < 10)
-      or (ansible_distribution == 'Ubuntu') and (ansible_distribution_major_version
-      | int < 18)
+    - name: set package name for older OSes.
+      set_fact:
+        pip_package: python-pip
+      when: >
+        (ansible_os_family == 'RedHat') and (ansible_distribution_major_version
+        | int < 8)
+        or (ansible_distribution == 'Debian') and (ansible_distribution_major_version
+        | int < 10)
+        or (ansible_distribution == 'Ubuntu') and (ansible_distribution_major_version
+        | int < 18)
   roles:
-  - role: buluma.pip
+    - role: buluma.pip
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-pip/blob/master/molecule/default/prepare.yml):
@@ -56,7 +56,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     ansible_python_interpreter: /usr/bin/python3
 
   roles:
-  - role: buluma.bootstrap
+    - role: buluma.bootstrap
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -82,29 +82,30 @@ pip_install_packages: []
 
 The following roles are used to prepare a system. You can prepare your system in another way.
 
-| Requirement | GitHub | GitLab |
-|-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-bootstrap)|
-|[buluma.setuptools](https://galaxy.ansible.com/buluma/setuptools)|[![Build Status GitHub](https://github.com/buluma/ansible-role-setuptools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-setuptools/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-setuptools/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-setuptools)|
-|[buluma.openssl](https://galaxy.ansible.com/buluma/openssl)|[![Build Status GitHub](https://github.com/buluma/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssl/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-openssl/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-openssl)|
-|[buluma.ca_certificates](https://galaxy.ansible.com/buluma/ca_certificates)|[![Build Status GitHub](https://github.com/buluma/ansible-role-ca_certificates/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ca_certificates/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-ca_certificates/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-ca_certificates)|
+| Requirement | GitHub |
+|-------------|--------|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|
+|[buluma.setuptools](https://galaxy.ansible.com/buluma/setuptools)|[![Build Status GitHub](https://github.com/buluma/ansible-role-setuptools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-setuptools/actions)|
+|[buluma.openssl](https://galaxy.ansible.com/buluma/openssl)|[![Build Status GitHub](https://github.com/buluma/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssl/actions)|
+|[buluma.ca_certificates](https://galaxy.ansible.com/buluma/ca_certificates)|[![Build Status GitHub](https://github.com/buluma/ansible-role-ca_certificates/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ca_certificates/actions)|
 
 ## [Context](#context)
 
 This role is part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
 Here is an overview of related roles:
+
 ![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-pip/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
 
 |container|tags|
 |---------|----|
-|[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
-|[Debian](https://hub.docker.com/r/buluma/debian)|all|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|all|
+|[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
+|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
+|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
 
 The minimum version of Ansible required is 2.10, tests have been done on:
 
@@ -121,3 +122,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
