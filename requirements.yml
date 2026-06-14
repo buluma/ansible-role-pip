@@ -4,5 +4,5 @@ roles:
   - name: buluma.setuptools
   - name: buluma.openssl
   - name: buluma.ca_certificates
-collections: []
+collections:
   - name: community.general
