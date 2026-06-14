@@ -1,17 +1,15 @@
 ---
 # Remove EXTERNALLY-MANAGED file if we're on Debian12
 # Related issue: https://github.com/geerlingguy/ansible-role-pip/issues/57
-- name: debian12 | Get python3 version installed
-  ansible.builtin.command: python3 --version
-  register: py3ver
-  changed_when: false
-  tags:
-    - molecule-notest
+- name: debian12 | Find EXTERNALLY-MANAGED files
+  ansible.builtin.find:
+    paths: /usr/lib
+    patterns: "EXTERNALLY-MANAGED"
+    recurse: true
+  register: externally_managed_files
 
 - name: debian12 | Remove EXTERNALLY-MANAGED
   ansible.builtin.file:
-    path: /usr/lib/python3.11/EXTERNALLY-MANAGED
+    path: "{{ item.path }}"
     state: absent
-  when: py3ver is defined and py3ver.stdout.find("3.11") != -1
-  tags:
-    - molecule-notest
+  loop: "{{ externally_managed_files.files }}"
