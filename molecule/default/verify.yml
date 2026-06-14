@@ -1,0 +1,11 @@
+---
+- name: Verify
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Check pip is available
+      ansible.builtin.command:
+        cmd: pip3 --version
+      changed_when: false
