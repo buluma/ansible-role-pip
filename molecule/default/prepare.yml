@@ -8,6 +8,10 @@
     ansible_python_interpreter: /usr/bin/python3
 
   pre_tasks:
+    - name: Bootstrap
+      ansible.builtin.import_role:
+        name: buluma.bootstrap
+
     - name: Find EXTERNALLY-MANAGED files
       ansible.builtin.find:
         paths: /usr/lib
