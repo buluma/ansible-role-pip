@@ -12,6 +12,16 @@
       ansible.builtin.import_role:
         name: buluma.bootstrap
 
+    - name: Gather facts
+      ansible.builtin.setup:
+
+    - name: Install python3-packaging on RedHat family
+      ansible.builtin.package:
+        name: python3-packaging
+        state: present
+      when: ansible_facts['os_family'] == "RedHat"
+      failed_when: false
+
     - name: Find EXTERNALLY-MANAGED files
       ansible.builtin.find:
         paths: /usr/lib
