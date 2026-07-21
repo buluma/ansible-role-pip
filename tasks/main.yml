@@ -6,7 +6,9 @@
 
 - name: Ensure Pip is installed.
   ansible.builtin.package:
-    name: "{{ pip_package }}"
+    name:
+      - "{{ pip_package }}"
+      - python3-packaging
     state: present
 
 - name: Ensure pip_install_packages are installed.
